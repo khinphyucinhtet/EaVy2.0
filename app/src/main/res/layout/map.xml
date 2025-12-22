@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- ================= TOP BAR ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="@drawable/bg_white_neon_border">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/neon_green"
+            android:contentDescription="Back"/>
+
+        <TextView
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map"
+            android:textColor="@color/neon_green"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- ================= MAP AREA ================= -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_white_neon_border">
+
+        <!-- MAP IMAGE -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/map"
+            android:scaleType="centerCrop"/>
+
+        <!-- ================= CURRENT LOCATION DOT ================= -->
+        <FrameLayout
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp">
+
+            <!-- Glow -->
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_location_glow"/>
+
+            <!-- Solid center dot -->
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_location_dot"/>
+        </FrameLayout>
+
+
+        <!-- ================= MAP MARKERS ================= -->
+
+        <LinearLayout
+            android:id="@+id/station1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/neon_green"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Station 1 · 1.3 km"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+
+        <!-- STATION 2 -->
+        <LinearLayout
+            android:id="@+id/station2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="90dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/neon_green"/>
+
+            <TextView
+                android:text="Station 2 · 1.6 km"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+        <!-- STATION 3 -->
+        <LinearLayout
+            android:id="@+id/station3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="40dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/neon_green"/>
+
+            <TextView
+                android:text="Station 3 · 3.7 km"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+        <!-- STATION 4 -->
+        <LinearLayout
+            android:id="@+id/station4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/neon_green"/>
+
+            <TextView
+                android:text="Station 4 · 2.9 km"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+        <!-- STATION 5 -->
+        <LinearLayout
+            android:id="@+id/station5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="100dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/neon_green"/>
+
+            <TextView
+                android:text="Station 5 · 4.2 km"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+        <!-- ================= POPUP CARD ================= -->
+        <LinearLayout
+            android:id="@+id/stationInfoCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_station_card"
+            android:visibility="gone">
+
+            <!-- CLOSE -->
+            <ImageView
+                android:id="@+id/btnClosePopup"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_close"
+                app:tint="@color/white"/>
+
+            <TextView
+                android:id="@+id/stationName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nagato Station"
+                android:textColor="@color/neon_green"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hayabusa No.4 Street, Kojro"
+                android:textColor="@color/white"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="120 kW · 12 min to 100%"
+                android:textColor="@color/neon_green"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 of 8 Available Connectors"
+                android:textColor="@color/white"
+                android:textSize="12sp"/>
+
+            <Button
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Directions"
+                android:textColor="@color/black"
+                android:background="@color/neon_green"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <!-- ================= BOTTOM NAV ================= -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/neon_green" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navMap"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_map"
+                app:tint="@color/neon_green" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navTrack"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_track"
+                app:tint="@color/neon_green" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/neon_green" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
