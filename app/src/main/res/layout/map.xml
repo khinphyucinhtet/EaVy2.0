@@ -51,18 +51,19 @@
 
         <!-- ================= CURRENT LOCATION DOT ================= -->
         <FrameLayout
+            android:id="@+id/currentLocation"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="40dp"
+            android:clickable="true"
+            android:focusable="true">
 
-            <!-- Glow -->
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/bg_location_glow"/>
 
-            <!-- Solid center dot -->
             <View
                 android:layout_width="10dp"
                 android:layout_height="10dp"
@@ -206,6 +207,8 @@
                 android:textSize="11sp"/>
         </LinearLayout>
 
+
+
         <!-- ================= POPUP CARD ================= -->
         <LinearLayout
             android:id="@+id/stationInfoCard"
@@ -217,7 +220,6 @@
             android:background="@drawable/bg_station_card"
             android:visibility="gone">
 
-            <!-- CLOSE -->
             <ImageView
                 android:id="@+id/btnClosePopup"
                 android:layout_width="24dp"
@@ -228,35 +230,35 @@
 
             <TextView
                 android:id="@+id/stationName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nagato Station"
                 android:textColor="@color/neon_green"
                 android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/stationAddress"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hayabusa No.4 Street, Kojro"
-                android:textColor="@color/white"
                 android:textSize="12sp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="120 kW · 12 min to 100%"
+                android:id="@+id/stationPower"
                 android:textColor="@color/neon_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textSize="12sp"/>
 
             <TextView
+                android:id="@+id/stationAvailability"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3 of 8 Available Connectors"
-                android:textColor="@color/white"
                 android:textSize="12sp"/>
 
             <Button
+                android:id="@+id/btnDirections"
                 android:layout_marginTop="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -265,14 +267,13 @@
                 android:background="@color/neon_green"/>
         </LinearLayout>
 
-
     </FrameLayout>
 
     <!-- ================= BOTTOM NAV ================= -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="63dp"
+        android:layout_height="64dp"
         android:background="@color/black"
         android:orientation="horizontal"
         android:weightSum="4">

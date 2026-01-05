@@ -47,6 +47,32 @@ public class UserDao {
         return success;
     }
 
+    // ================= READ (GET FULL NAME BY USERNAME) =================
+    public String getFullNameByUsername(String username) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = db.query(
+                DBHelper.TABLE_USER,
+                new String[]{DBHelper.COL_FULLNAME},
+                DBHelper.COL_USERNAME + "=?",
+                new String[]{username},
+                null,
+                null,
+                null
+        );
+
+        String fullName = null;
+
+        if (cursor.moveToFirst()) {
+            fullName = cursor.getString(
+                    cursor.getColumnIndexOrThrow(DBHelper.COL_FULLNAME)
+            );
+        }
+
+        cursor.close();
+        return fullName;
+    }
+
     // ================= READ (VIEW ALL USERS – DEBUG) =================
     public Cursor getAllUsers() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();

@@ -2,6 +2,7 @@ package com.example.eavy20.ui;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences; // ✅ ADD
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,8 +46,15 @@ public class LoginActivity extends AppCompatActivity {
             boolean success = userDao.loginUser(user, pass);
 
             if (success) {
+
+                // ✅ SAVE LOGGED-IN USER SESSION (THIS IS THE FIX)
+                SharedPreferences prefs = getSharedPreferences("UserSession", MODE_PRIVATE);
+                prefs.edit().putString("username", user).apply();
+
+                // Existing navigation (keep as-is or change to Track if needed)
                 startActivity(new Intent(LoginActivity.this, Home.class));
                 finish(); // prevent back to login
+
             } else {
                 showError("Invalid username or password");
             }

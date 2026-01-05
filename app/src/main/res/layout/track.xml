@@ -68,9 +68,10 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvUserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Alex Chen"
+                        android:text="@string/default_username"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -88,14 +89,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:text="My Vehicles"
-                    android:textSize="11sp"
-                    android:textColor="@color/black"
-                    android:background="@color/neon_green"
-                    android:paddingHorizontal="12dp" />
             </LinearLayout>
 
             <!-- VEHICLE QUICK STATUS -->
@@ -250,6 +243,52 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
+
+            <!-- Log Out -->
+            <LinearLayout
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_white_neon_border"
+                android:padding="14dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Log out"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <!-- Delete Account -->
+            <LinearLayout
+                android:id="@+id/btnDeleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_white_neon_border"
+                android:padding="14dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delete Account"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
